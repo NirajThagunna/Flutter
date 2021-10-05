@@ -62,6 +62,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
             });
           },
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
