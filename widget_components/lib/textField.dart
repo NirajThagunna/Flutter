@@ -52,10 +52,28 @@ class _TextFieldAppState extends State<TextFieldApp> {
               padding: EdgeInsets.all(15),
               child: TextField(
                 obscureText: true,
+                maxLength: 12,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0),),
+                    borderSide: BorderSide(width: 2, color: Colors.green),
+                  ),
                   labelText: "Password",
                   hintText: "Enter Password",
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: TextField(
+                maxLines: 5,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    borderSide: BorderSide(width: 2),
+                  ),
+                  labelText: "Message",
+                  hintText: "Leave any message here!",
                 ),
               ),
             ),
