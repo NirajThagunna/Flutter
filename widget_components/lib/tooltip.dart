@@ -32,6 +32,7 @@ class _ClipRRectAppState extends State<ClipRRectApp> {
         leading: IconButton(
           icon: Icon(Icons.menu),
           tooltip: "Menu",
+          onPressed: (){},
         ),
       ),
       body: Center(
