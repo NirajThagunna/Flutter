@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 class TextFieldApp extends StatefulWidget {
   final String title;
 
-  TextFieldApp({Key key, this.title}) : super(key: key);
+  TextFieldApp({Key? key, required this.title}) : super(key: key);
 
   @override
   _TextFieldAppState createState() => _TextFieldAppState();
@@ -82,7 +82,7 @@ class _TextFieldAppState extends State<TextFieldApp> {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.blue),
                 padding: MaterialStateProperty.all(EdgeInsets.all(12)),
-              ),
+              ), onPressed: () {  },
             )
           ],
         ),

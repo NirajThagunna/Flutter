@@ -19,17 +19,17 @@ class _MyAppState extends State<MyApp> {
     ListItem(4, "Dart"),
   ];
 
-  List<DropdownMenuItem<ListItem>> _dropdownMenuItems;
-  ListItem _itemSelected;
+  List<DropdownMenuItem<ListItem>>? _dropdownMenuItems;
+  ListItem? _itemSelected;
 
   void initState() {
     super.initState();
     _dropdownMenuItems = buildDropdownMenuItems(_dropdownItems);
-    _itemSelected = _dropdownMenuItems[1].value;
+    _itemSelected = _dropdownMenuItems![1].value;
   }
 
   List<DropdownMenuItem<ListItem>> buildDropdownMenuItems(List listItems) {
-    List<DropdownMenuItem<ListItem>> items = List();
+    List<DropdownMenuItem<ListItem>> items = [];
     for (ListItem listItem in listItems) {
       items.add(
         DropdownMenuItem(
@@ -65,14 +65,14 @@ class _MyAppState extends State<MyApp> {
                   items: _dropdownMenuItems,
                   onChanged: (value) {
                     setState(() {
-                      _itemSelected = value;
+                      _itemSelected = value as ListItem?;
                     });
                   },
                 ),
               ),
             ),
           ),
-          Text("We have selected ${_itemSelected.name}"),
+          Text("We have selected ${_itemSelected!.name}"),
         ],
       ),
     );

@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   _WidgetComponents createState() => _WidgetComponents();

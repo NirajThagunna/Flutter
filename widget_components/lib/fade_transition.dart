@@ -9,8 +9,8 @@ class FadeTransitionDemo extends StatefulWidget {
 class _FadeTransitionDemoState extends State<FadeTransitionDemo>
     with TickerProviderStateMixin {
 
-  AnimationController _controller;
-  Animation<double> _animation;
+  AnimationController? _controller;
+  Animation<double>? _animation;
 
   initState() {
     super.initState();
@@ -21,14 +21,14 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
 
     )..repeat(reverse:true);
     _animation = CurvedAnimation(
-        parent: _controller,
+        parent: _controller!,
         curve: Curves.easeIn
     );
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
@@ -42,7 +42,7 @@ class _FadeTransitionDemoState extends State<FadeTransitionDemo>
       ),
       body: Center(
         child: FadeTransition(
-          opacity: _animation,
+          opacity: _animation!,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

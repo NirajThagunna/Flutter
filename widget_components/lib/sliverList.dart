@@ -57,8 +57,8 @@ class _SliverListAppState extends State<SliverListApp> {
   }
 }
 
-List _buildChild(int count) {
-  List<Widget> listItems = List();
+List<Widget> _buildChild(count) {
+  List<Widget> listItems = <Widget>[];
   for (int i = 0; i < count; i++) {
     listItems.add(new Padding(padding: EdgeInsets.all(10.0),
       child: Text('List Item ${i.toString()}', style: TextStyle(fontSize: 25, color: Colors.lightBlueAccent),),

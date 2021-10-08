@@ -29,7 +29,7 @@ class Choice {
   final String name;
   final IconData icon;
 
-  const Choice({this.name, this.icon});
+  const Choice({required this.name, required this.icon});
 }
 
 const List<Choice> choices = const <Choice>[
@@ -78,11 +78,11 @@ class _PopupMenuButtonAppState extends State<PopupMenuButtonApp> {
 class ChoiceCard extends StatelessWidget {
   final Choice choice;
 
-  const ChoiceCard({Key key, this.choice}) : super(key: key);
+  const ChoiceCard({Key? key, required this.choice}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.headline3;
+    final TextStyle? textStyle = Theme.of(context).textTheme.headline3;
     return Card(
       color: Colors.greenAccent,
       child: Center(
@@ -90,7 +90,7 @@ class ChoiceCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Icon(choice.icon, size: 130, color: textStyle.color,),
+            Icon(choice.icon, size: 130, color: textStyle!.color,),
             Text(choice.name, style: textStyle,)
           ],
         ),

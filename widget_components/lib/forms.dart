@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class FormApp extends StatefulWidget {
-  const FormApp({Key key}) : super(key: key);
+  const FormApp({Key? key}) : super(key: key);
 
   @override
   _FormAppState createState() => _FormAppState();
@@ -30,8 +30,11 @@ class _FormAppState extends State<FormApp> {
   // Unique key for the validation
   // final _formKey = GlobalKey<FormState>();
   final GlobalKey<FormState> _formKey = GlobalKey();
+  String? a;
   String fname = "";
+  String? b;
   String pno = "";
+  String? c;
   String pass = "";
 
   // void initState() {
@@ -42,10 +45,15 @@ class _FormAppState extends State<FormApp> {
   // }
 
   void _submit() {
-    final _isValid = _formKey.currentState.validate();
-    if (!_isValid)
-      return;
-    _formKey.currentState.save();
+    // final _isValid = _formKey.currentState.validate();
+    // if (!_isValid)
+    //   return;
+    // _formKey.currentState.save();
+    setState(() {
+      fname = a!;
+      pno = b!;
+      pass = c!;
+    });
   }
 
   @override
@@ -66,13 +74,11 @@ class _FormAppState extends State<FormApp> {
                 hintText: 'Enter your name',
                 labelText: "Full Name",
               ),
-              onFieldSubmitted: (value) {
-                setState(() {
-                  fname = value;
-                });
+              onChanged: (value) {
+                a = value;
               },
               validator: (value) {
-                if (value.isEmpty)
+                if (value!.isEmpty)
                   return 'Please enter some text';
                 return null;
               },
@@ -83,11 +89,11 @@ class _FormAppState extends State<FormApp> {
                 hintText: 'Enter phone number',
                 labelText: "Phone Number",
               ),
-              onFieldSubmitted: (value) {
-                pno = value;
+              onChanged: (value) {
+                b = value;
               },
               validator: (value) {
-                if (value.isEmpty)
+                if (value!.isEmpty)
                   return 'Please enter any number';
                 return null;
               },
@@ -99,13 +105,11 @@ class _FormAppState extends State<FormApp> {
                 hintText: 'Enter Password',
                 labelText: "Password",
               ),
-              onFieldSubmitted: (value) {
-                setState(() {
-                  pass = value;
-                });
+              onChanged: (value) {
+                c = value;
               },
               validator: (value) {
-                if (value.isEmpty)
+                if (value!.isEmpty)
                   return 'Please enter the correct password';
                 return null;
               },
@@ -118,7 +122,7 @@ class _FormAppState extends State<FormApp> {
                   style: ButtonStyle( 
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
                   ),
-                  onPressed: () => _submit();
+                  onPressed: () => _submit(),
                 ),
               ),
             ),
