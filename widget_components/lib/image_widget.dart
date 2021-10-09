@@ -38,6 +38,8 @@ class _ImageWidgetState extends State<ImageWidget> {
             FadeInImage.assetNetwork(
               placeholder: "I am a FadeInImage",
               image: 'https://png.pngtree.com/illustrations/20190327/ourmid/pngtree-cure-starry-sky-night-sky-star-png-image_38228.jpg',
+              height: 200,
+              width: 400,
             )
           ],
         ),
