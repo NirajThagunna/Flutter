@@ -29,7 +29,7 @@ enum BestLang{
 }
 
 class _RadioButtonAppState extends State<RadioButtonApp> {
-  BestLang? _bestLang;
+  BestLang? _bestLang = BestLang.Dart;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +47,7 @@ class _RadioButtonAppState extends State<RadioButtonApp> {
               groupValue: _bestLang,
               onChanged: (BestLang? value) {
                 setState(() {
+                  print(value);
                   _bestLang = value!;
                 });
               },
@@ -59,6 +60,7 @@ class _RadioButtonAppState extends State<RadioButtonApp> {
               groupValue: _bestLang,
               onChanged: (BestLang? value){
                 setState(() {
+                  print(value);
                   _bestLang = value!;
                 });
               },
@@ -71,6 +73,7 @@ class _RadioButtonAppState extends State<RadioButtonApp> {
               groupValue: _bestLang,
               onChanged: (BestLang? value){
                 setState(() {
+                  print(value);
                   _bestLang = value!;
                 });
               },
