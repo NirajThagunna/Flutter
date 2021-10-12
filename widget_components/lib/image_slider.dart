@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,23 +35,8 @@ class _MySliderAppState extends State<MySliderApp> {
         constraints: BoxConstraints.expand(
           height: 225,
         ),
-        child: imageSlider(context),
       ),
     );
   }
-}
-
-Swiper imageSlider(BuildContext context) {
-  return Swiper(
-    autoplay: true,
-    itemBuilder: (BuildContext context, int index) {
-      return Image.network('https://images.ctfassets.net/hrltx12pl8hq/66lRNN2kfHcVSUMrmrcKxf/76b78071032586ff9766d8eb51592f21/free-nature-images.jpg?fit=fill&w=840&h=350',
-        fit: BoxFit.fitHeight,
-      );
-    },
-    itemCount: 10,
-    viewportFraction: 0.7,
-    scale: 0.8,
-  );
 }
 
